@@ -1,0 +1,39 @@
+.images {
+  width: 133px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+.nav-items {
+  width: 50%;
+  padding-top: 10px;
+}
+.nav-items > ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  padding-left: 10%;
+}
+
+.nav-items > ul > li {
+  padding: 0 25px;
+  margin: 10px 25px;
+}
+.body {
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.res-card {
+  width: 200px;
+  height: 400px;
+  background-color: #f0f0f0;
+}
+
+.res-card-img {
+  width: 200px;
+}
