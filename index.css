@@ -23,17 +23,29 @@
   margin: 10px 25px;
 }
 .body {
-  border: 1px solid black;
   padding: 10px;
   margin-top: 5px;
 }
 
 .res-card {
-  width: 200px;
-  height: 400px;
+  width: 333px;
+  height: 410px;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid white;
   background-color: #f0f0f0;
 }
-
+.res-card:hover {
+  cursor: pointer;
+  border: 1px solid black;
+}
+.images-container {
+}
 .res-card-img {
-  width: 200px;
+  width: 333px;
+  height: 250px;
+}
+.rest-container {
+  display: flex;
+  flex-wrap: wrap;
 }
