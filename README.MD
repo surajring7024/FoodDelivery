@@ -25,19 +25,19 @@
 8. must use key for every card
 
 # Day 3:
+
 1. file structure changes
 2. exported data from component using two methods
    2.1 default export
-      - export default Component/variable
-   2.2 Named Export
-      - export const LOGO_URL
+   - export default Component/variable
+     2.2 Named Export
+   - export const LOGO_URL
 3. Import data from component
    3.1 import Component from 'path'
    3.2 import {LOGO_URL} from 'path'
-4. hooks
-   -`useState hook` is used to maintain the state in our React application. It keeps track of the state changes so basically useState has the ability to encapsulate local state in a functional component.
-The useState hook is a special function that takes the `initial state` as an `argument` and `returns an array` of two entries. UseState encapsulate only singular value from the state, for multiple state need to have useState calls.
-=== Syntax for useState hook
+4. hooks -`useState hook` is used to maintain the state in our React application. It keeps track of the state changes so basically useState has the ability to encapsulate local state in a functional component.
+   The useState hook is a special function that takes the `initial state` as an `argument` and `returns an array` of two entries. UseState encapsulate only singular value from the state, for multiple state need to have useState calls.
+   === Syntax for useState hook
 
 ```
 const [state, setState] = useState(initialstate);
@@ -57,3 +57,55 @@ const Example = (props) => {
   return <div />;
 }
 ```
+
+# Day 4:
+
+- useEffect:
+
+  - use effect called after every render of the component when dependancy array is not present
+
+  ***
+
+  useEffect( console.log("Use effect called")
+  );
+
+  ***
+
+- when empty Dependancy array is present
+
+  - called on initial render of the component
+  - called only once
+
+  ***
+
+  useEffect( console.log("Use effect called),[]);
+
+  ***
+
+- When dependency array is present with value
+
+  - called when the array element is updated
+
+  ***
+
+  useEffect( console.log("Use effect called)
+  ,[btnElement]);
+
+  ***
+
+- Use State:
+
+  - create state varibles at top
+  - Dont use in if, for, function
+
+- ROUTING
+
+  - Two types of routing
+
+    - client side routing - not making call to server
+    - server side routing - making call to server
+
+    - createBrowserRouter
+      - hook use to create browser Router
+    - RouterProvider
+      - hook use to use Route created by createBrowserRouter
