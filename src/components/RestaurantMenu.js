@@ -44,7 +44,7 @@ const RestaurantMenu = () => {
           <MenuCategory
             key={category?.card?.card?.categoryId}
             data={category?.card?.card}
-            {/* stae lifting up*/}
+            /* state lifting up*/
             showItem={index === showItem ? true : false}
             setShowItem={() => setShowItem(index)}
           ></MenuCategory>

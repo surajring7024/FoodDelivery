@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "./UserContext";
 
 export const Header = () => {
   const [btnName, setBtnName] = useState("Login");
   const onlineStatus = useOnlineStatus();
+
+  const { loggedInUser } = useContext(UserContext);
 
   return (
     <div className="">
@@ -30,15 +33,20 @@ export const Header = () => {
             <li className="px-4">
               <Link to="/grocery">Grocery</Link>
             </li>
+            <li>
+              <button
+                className=" w-24 rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                onClick={() => {
+                  btnName === "Login"
+                    ? setBtnName("Logout")
+                    : setBtnName("Login");
+                }}
+              >
+                {btnName}
+              </button>
+            </li>
+            <li className="px-4">{loggedInUser}</li>
           </ul>
-          <button
-            className=" w-24 rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            onClick={() => {
-              btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
-            }}
-          >
-            {btnName}
-          </button>
         </div>
       </div>
     </div>

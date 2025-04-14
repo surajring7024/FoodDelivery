@@ -1,14 +1,17 @@
 import RestaurantCard, { withPromotedData } from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { RES_DATA_API } from "../utils/constants";
+import UserContext from "./UserContext";
 
 const Body = () => {
   const [restaurantData, setrestaurantData] = useState([]);
   const [filteredRest, setfilteredRest] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   const onlineStatus = useOnlineStatus();
   const PromotedRestaurant = withPromotedData(RestaurantCard);
@@ -93,6 +96,14 @@ const Body = () => {
           >
             X
           </button>
+          <input
+            className="searchbox border border-solid border-black bg-white"
+            type="text"
+            value={loggedInUser}
+            onChange={(e) => {
+              setUserName(e.target.value);
+            }}
+          ></input>
         </div>
       </div>
       <div className="rest-container flex flex-wrap">
